@@ -1,0 +1,29 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 15px;
+    margin-bottom: 40px;
+
+    &__logo-image {
+        width: 150px;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 10px;
+
+        &__link {
+            text-decoration: none;
+            color: #333333;
+            font-weight: 500;
+            font-size: 20px;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                color: #55cc44;
+            }
+        }
+    }
+}
