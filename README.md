@@ -1,4 +1,4 @@
-# Rick And Morty APP
+# Rick And Morty App
 ### Try it right now: 
 
 ## Stack
