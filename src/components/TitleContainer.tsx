@@ -1,8 +1,8 @@
 
 const TitleContainer: React.FC<{title: string}> = ({title}) => {
     return (
-        <div className="page-title-container">
-            <h1 className="page-title-container__title">
+        <div className="w-full flex justify-center mb-[50px]">
+            <h1 className="text-6xl font-extrabold text-[#202329]">
                 {title}
             </h1>
         </div>

@@ -15,7 +15,7 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    console.log(data?.characters.characters)
+    console.log(data)
   }, [data]);
 
   return (
