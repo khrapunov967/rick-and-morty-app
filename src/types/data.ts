@@ -9,3 +9,10 @@ export type Character = {
     species: string;
     status: string;
 };
+
+export type Location = {
+    id: string;
+    name: string;
+    type: string;
+    dimension: string;
+};

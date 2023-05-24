@@ -17,7 +17,7 @@ const Header: React.FC = () => {
                     Characters
                 </Link>
 
-                <Link to={"/"} className="text-xl font-bold text-[#333333] transition-colors duration-200 hover:text-[#55cc44]">
+                <Link to={"/locations"} className="text-xl font-bold text-[#333333] transition-colors duration-200 hover:text-[#55cc44]">
                     Locations
                 </Link>
 

@@ -1,4 +1,4 @@
-import { Character } from "./data"
+import { Character, Location } from "./data"
 
 export interface IAllCharacatersResponse {
     characters: {
@@ -6,5 +6,14 @@ export interface IAllCharacatersResponse {
             pages: number
         },
         characters: Character[]
+    }
+};
+
+export interface IAllLocationsResponse {
+    locations: {
+        info: {
+            pages: number
+        },
+        locations: Location[]
     }
 };

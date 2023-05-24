@@ -5,23 +5,14 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./components/RootLayout";
 import CharactersPage from "./pages/CharactersPage";
+import LocationsPage from "./pages/LocationsPage";
 
 const App: React.FC = () => {
-
-  const { error, loading, data } = useQuery<IAllCharacatersResponse>(ALL_CHARACTERS, {
-    variables: {
-      page: 2
-    }
-  });
-
-  useEffect(() => {
-    console.log(data)
-  }, [data]);
-
   return (
     <RootLayout>
       <Routes>
         <Route path={"/"} element={<CharactersPage />} />
+        <Route path={"/locations"} element={<LocationsPage />} />
       </Routes>
     </RootLayout>
   );
