@@ -1,5 +1,4 @@
-import Header from "../Header/Header";
-import "./RootLayout.scss";
+import Header from "./Header";
 
 const RootLayout: React.FC<{children: React.ReactNode}> = ({children}) => {
     return (

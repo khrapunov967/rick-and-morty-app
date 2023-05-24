@@ -1,9 +1,9 @@
-import PageTitleContainer from "../components/PageTitleContainer/PageTitleContainer";
+import TitleContainer from "../components/TitleContainer";
 
 const CharactersPage: React.FC = () => {
     return (
         <section>
-            <PageTitleContainer
+            <TitleContainer
                 title="Characters"
             />
         </section>

@@ -3,7 +3,7 @@ import { IAllCharacatersResponse } from "./types/hooks";
 import { useQuery } from "@apollo/client";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import RootLayout from "./components/RootLayout/RootLayout";
+import RootLayout from "./components/RootLayout";
 import CharactersPage from "./pages/CharactersPage";
 
 const App: React.FC = () => {
