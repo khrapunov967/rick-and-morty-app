@@ -1,17 +1,18 @@
 import { useQuery } from "@apollo/client";
-import { ALL_CHARACTERS } from "../apollo/queries/characters";
-import { IAllCharacatersResponse } from "../types/hooks";
+import { IAllLocationsResponse } from "../types/hooks";
 import { useState } from "react";
-import CharactersContainer from "../components/CharactersContainer";
+import { ALL_LOCATIONS } from "../apollo/queries/locations";
 import TitleContainer from "../components/TitleContainer";
 import PageController from "../components/PageController";
 import Loader from "../components/Loader";
+import CardContainer from "../components/CardContainer";
+import LocationCard from "../components/LocationCard";
 
 const LocationsPage: React.FC = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     
-    const { error, loading, data } = useQuery<IAllCharacatersResponse>(ALL_CHARACTERS, {
+    const { error, loading, data } = useQuery<IAllLocationsResponse>(ALL_LOCATIONS, {
         variables: {
             page: currentPage
         }
@@ -27,7 +28,7 @@ const LocationsPage: React.FC = () => {
                 <PageController
                     setCurrentPage={setCurrentPage}
                     currentPage={currentPage}
-                    maxPage={data?.characters.info.pages ?? 1}
+                    maxPage={data?.locations.info.pages ?? 1}
                     minPage={1}
                 />
                 
@@ -42,9 +43,20 @@ const LocationsPage: React.FC = () => {
                             <Loader />
                         </div> 
                     :
-                        <CharactersContainer
-                            characters={data?.characters.characters ?? []}
-                        />
+                        <CardContainer>
+                            {
+                                data?.locations.locations.map(location => {
+                                    return (
+                                        <LocationCard
+                                            id={location.id}
+                                            name={location.name}
+                                            dimension={location.dimension}
+                                            type={location.type}
+                                        />
+                                    )
+                                })
+                            }
+                        </CardContainer>
                 }
             </div>
         </section>

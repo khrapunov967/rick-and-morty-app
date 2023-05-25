@@ -1,3 +1,4 @@
+import { Location } from "./data";
 
 export interface ICharacterCard {
     id: string;
@@ -7,6 +8,8 @@ export interface ICharacterCard {
     species: string;
     status: string;
 };
+
+export interface ILocationCard extends Location {};
 
 export interface IPageController {
     setCurrentPage: React.Dispatch<React.SetStateAction<number>>;

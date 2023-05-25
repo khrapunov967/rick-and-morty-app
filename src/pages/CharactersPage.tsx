@@ -2,10 +2,11 @@ import { useQuery } from "@apollo/client";
 import { ALL_CHARACTERS } from "../apollo/queries/characters";
 import { IAllCharacatersResponse } from "../types/hooks";
 import { useState } from "react";
-import CharactersContainer from "../components/CharactersContainer";
 import TitleContainer from "../components/TitleContainer";
 import PageController from "../components/PageController";
 import Loader from "../components/Loader";
+import CardContainer from "../components/CardContainer";
+import CharacterCard from "../components/CharacterCard";
 
 const CharactersPage: React.FC = () => {
 
@@ -42,9 +43,22 @@ const CharactersPage: React.FC = () => {
                             <Loader />
                         </div> 
                     :
-                        <CharactersContainer
-                            characters={data?.characters.characters ?? []}
-                        />
+                        <CardContainer>
+                            {
+                                data?.characters.characters.map(character => {
+                                    return (
+                                        <CharacterCard
+                                            id={character.id}
+                                            name={character.name}
+                                            status={character.status}
+                                            species={character.species}
+                                            location={character.location.name}
+                                            image={character.image}
+                                        />
+                                    );
+                                })
+                            }
+                        </CardContainer>
                 }
             </div>
         </section>
