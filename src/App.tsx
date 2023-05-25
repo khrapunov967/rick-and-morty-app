@@ -1,11 +1,8 @@
-import { ALL_CHARACTERS } from "./apollo/queries/characters";
-import { IAllCharacatersResponse } from "./types/hooks";
-import { useQuery } from "@apollo/client";
-import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./components/RootLayout";
 import CharactersPage from "./pages/CharactersPage";
 import LocationsPage from "./pages/LocationsPage";
+import EpisodesPage from "./pages/EpisodesPage";
 
 const App: React.FC = () => {
   return (
@@ -13,6 +10,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path={"/"} element={<CharactersPage />} />
         <Route path={"/locations"} element={<LocationsPage />} />
+        <Route path={"/episodes"} element={<EpisodesPage />} />
       </Routes>
     </RootLayout>
   );

@@ -21,7 +21,7 @@ const Header: React.FC = () => {
                     Locations
                 </Link>
 
-                <Link to={"/"} className="text-xl font-bold text-[#333333] transition-colors duration-200 hover:text-[#55cc44]">
+                <Link to={"/episodes"} className="text-xl font-bold text-[#333333] transition-colors duration-200 hover:text-[#55cc44]">
                     Episodes
                 </Link>
             </nav>

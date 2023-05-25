@@ -1,4 +1,4 @@
-import { Location } from "./data";
+import { Episode, Location } from "./data";
 
 export interface ICharacterCard {
     id: string;
@@ -10,6 +10,8 @@ export interface ICharacterCard {
 };
 
 export interface ILocationCard extends Location {};
+
+export interface IEpisodeCard extends Episode {};
 
 export interface IPageController {
     setCurrentPage: React.Dispatch<React.SetStateAction<number>>;

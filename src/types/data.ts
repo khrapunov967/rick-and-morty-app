@@ -16,3 +16,10 @@ export type Location = {
     type: string;
     dimension: string;
 };
+
+export type Episode = {
+    id: string;
+    name: string;
+    air_date: string;
+    episode: string;
+};
