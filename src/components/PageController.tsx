@@ -1,4 +1,5 @@
 import { IPageController } from "../types/props";
+import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 
 const PageController: React.FC<IPageController> = ({setCurrentPage, currentPage, minPage, maxPage}) => {
 
@@ -13,19 +14,21 @@ const PageController: React.FC<IPageController> = ({setCurrentPage, currentPage,
     return (
         <div className="w-full flex justify-between py-4 px-4">
             <button
-                className="text-white font-semibold hover:text-[#55cc44] transition-colors duration-200"
+                className="text-white font-semibold hover:text-[#55cc44] transition-colors duration-200 flex items-center"
                 onClick={prevPage}
                 disabled={currentPage === minPage}
             >
-                {"< Prev Page"}
+                <IoMdArrowDropleft />
+                {"Prev Page"}
             </button>
 
             <button
-                className="text-white font-semibold hover:text-[#55cc44] transition-colors duration-200"
+                className="text-white font-semibold hover:text-[#55cc44] transition-colors duration-200 flex items-center"
                 onClick={nextPage}
                 disabled={currentPage === maxPage}
             >
-                {"Next Page >"}
+                {"Next Page"}
+                <IoMdArrowDropright />
             </button>
         </div>
     );
