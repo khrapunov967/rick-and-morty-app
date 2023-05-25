@@ -10,11 +10,16 @@ export const ALL_CHARACTERS = gql`
                 id
                 name
                 status
-                image
                 species
+                type
+                gender
+                origin {
+                    name
+                }
                 location {
                     name
                 }
+                image
             }
         }
     }

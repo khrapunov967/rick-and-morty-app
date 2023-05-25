@@ -8,6 +8,11 @@ export type Character = {
     };
     species: string;
     status: string;
+    type: string;
+    gender: string;
+    origin: {
+        name: string
+    }
 };
 
 export type Location = {
