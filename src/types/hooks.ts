@@ -26,3 +26,7 @@ export interface IAllEpisodesResponse {
         episodes: Episode[]
     }
 };
+
+export interface characterByIdResponse {
+    character: Character
+};

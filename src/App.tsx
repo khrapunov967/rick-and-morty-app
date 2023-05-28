@@ -3,12 +3,14 @@ import RootLayout from "./components/RootLayout";
 import CharactersPage from "./pages/CharactersPage";
 import LocationsPage from "./pages/LocationsPage";
 import EpisodesPage from "./pages/EpisodesPage";
+import CharacterDetails from "./pages/CharacterDetails";
 
 const App: React.FC = () => {
   return (
     <RootLayout>
       <Routes>
         <Route path={"/"} element={<CharactersPage />} />
+        <Route path={"/characters/:id"} element={<CharacterDetails />} />
         <Route path={"/locations"} element={<LocationsPage />} />
         <Route path={"/episodes"} element={<EpisodesPage />} />
       </Routes>
