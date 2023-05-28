@@ -4,6 +4,7 @@ import CharactersPage from "./pages/CharactersPage";
 import LocationsPage from "./pages/LocationsPage";
 import EpisodesPage from "./pages/EpisodesPage";
 import CharacterDetails from "./pages/CharacterDetails";
+import LocationDetails from "./pages/LocationDetails";
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         <Route path={"/"} element={<CharactersPage />} />
         <Route path={"/characters/:id"} element={<CharacterDetails />} />
         <Route path={"/locations"} element={<LocationsPage />} />
+        <Route path={"/locations/:id"} element={<LocationDetails />} />
         <Route path={"/episodes"} element={<EpisodesPage />} />
       </Routes>
     </RootLayout>

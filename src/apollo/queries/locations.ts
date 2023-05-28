@@ -16,3 +16,23 @@ export const ALL_LOCATIONS = gql`
         }
     }
 `;
+
+export const LOCATION_BY_ID = gql`
+    query LocationById($id: ID!) {
+        location(id: $id) {
+            name
+            type
+            dimension
+            residents {
+                id
+                name
+                status
+                image
+                species
+                location {
+                    name
+                }
+            }
+        }
+    }
+`;

@@ -3,7 +3,7 @@ import { IEpisodeCard } from "../types/props";
 
 const EpisodeCard: React.FC<IEpisodeCard> = ({id, name, episode, air_date}) => {
     return (
-        <Link to={`/characters/${id}`} className="w-full max-w-[600px] flex flex-col items-center text-center bg-[#3c3e44] rounded-xl overflow-hidden gap-4 shadow-md animate-slideup p-4">
+        <Link to={`/episodes/${id}`} className="w-full max-w-[600px] flex flex-col items-center text-center bg-[#3c3e44] rounded-xl overflow-hidden gap-4 shadow-md animate-slideup p-4">
             <div>
                 <p className="text-[#f5f5f5] text-3xl font-extrabold transition-colors duration-200 hover:text-[#55cc44]">
                     {name}

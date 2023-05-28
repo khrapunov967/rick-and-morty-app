@@ -15,11 +15,14 @@ export type Character = {
     }
 };
 
+export type CharacterOmit = Omit<Character, "origin" | "gender" | "type">;
+
 export type Location = {
     id: string;
     name: string;
     type: string;
     dimension: string;
+    residents: CharacterOmit[]
 };
 
 export type Episode = {

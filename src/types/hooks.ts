@@ -30,3 +30,7 @@ export interface IAllEpisodesResponse {
 export interface characterByIdResponse {
     character: Character
 };
+
+export interface locationByIdResponse {
+    location: Location
+}
