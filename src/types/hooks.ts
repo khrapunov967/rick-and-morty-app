@@ -34,3 +34,7 @@ export interface characterByIdResponse {
 export interface locationByIdResponse {
     location: Location
 }
+
+export interface IEpisodeByIdResponse {
+    episode: Episode
+}
