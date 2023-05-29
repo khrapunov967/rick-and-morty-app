@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { CHARACTER_BY_ID } from "../apollo/queries/characters";
-import { characterByIdResponse } from "../types/hooks";
+import { ICharacterByIdResponse } from "../types/hooks";
 import TitleContainer from "../components/TitleContainer";
 import PropCard from "../components/PropCard";
 import Loader from "../components/Loader";
@@ -10,7 +10,7 @@ const CharacterDetails: React.FC = () => {
 
     const { id } = useParams();
 
-    const { error, loading, data } = useQuery<characterByIdResponse>(CHARACTER_BY_ID, {
+    const { error, loading, data } = useQuery<ICharacterByIdResponse>(CHARACTER_BY_ID, {
         variables: {
             id
         }

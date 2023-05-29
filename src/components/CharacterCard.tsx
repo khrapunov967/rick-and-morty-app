@@ -42,7 +42,7 @@ const CharacterCard: React.FC<ICharacterCard> = ({name, image, species, status, 
                         </p>
 
                         <p className="text-white">
-                            {location}
+                            {location.name}
                         </p>
                     </div>
                 </div>

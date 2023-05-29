@@ -1,3 +1,4 @@
+import { ICharacterCard } from "./props";
 
 export type Character = {
     id: string;
@@ -15,14 +16,12 @@ export type Character = {
     }
 };
 
-export type CharacterOmit = Omit<Character, "origin" | "gender" | "type">;
-
 export type Location = {
     id: string;
     name: string;
     type: string;
     dimension: string;
-    residents: CharacterOmit[]
+    residents: ICharacterCard[]
 };
 
 export type Episode = {
@@ -30,6 +29,6 @@ export type Episode = {
     name: string;
     air_date: string;
     episode: string;
-    characters: CharacterOmit[]
+    characters: ICharacterCard[]
 };
 

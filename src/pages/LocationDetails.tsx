@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { LOCATION_BY_ID } from "../apollo/queries/locations";
-import { locationByIdResponse } from "../types/hooks";
+import { ILocationByIdResponse } from "../types/hooks";
 import TitleContainer from "../components/TitleContainer";
 import PropCard from "../components/PropCard";
 import CardContainer from "../components/CardContainer";
@@ -12,7 +12,7 @@ const LocationDetails: React.FC = () => {
 
     const { id } = useParams();
 
-    const { error, loading, data } = useQuery<locationByIdResponse>(LOCATION_BY_ID, {
+    const { error, loading, data } = useQuery<ILocationByIdResponse>(LOCATION_BY_ID, {
         variables: {
             id
         }
@@ -57,7 +57,7 @@ const LocationDetails: React.FC = () => {
                                             key={resident.id}
                                             id={resident.id}
                                             name={resident.name}
-                                            location={resident.location.name}
+                                            location={resident.location}
                                             image={resident.image}
                                             species={resident.species}
                                             status={resident.status}

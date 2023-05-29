@@ -57,7 +57,7 @@ const EpisodeDetails: React.FC = () => {
                                             key={character.id}
                                             id={character.id}
                                             name={character.name}
-                                            location={character.location.name}
+                                            location={character.location}
                                             image={character.image}
                                             species={character.species}
                                             status={character.status}

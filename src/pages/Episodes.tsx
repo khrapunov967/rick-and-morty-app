@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 import CardContainer from "../components/CardContainer";
 import EpisodeCard from "../components/EpisodeCard";
 
-const EpisodesPage: React.FC = () => {
+const Episodes: React.FC = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     
@@ -64,4 +64,4 @@ const EpisodesPage: React.FC = () => {
     );
 };
 
-export default EpisodesPage;
+export default Episodes;

@@ -1,17 +1,11 @@
-import { Episode, Location } from "./data";
+import { Character, Episode, Location } from "./data";
 
-export interface ICharacterCard {
-    id: string;
-    name: string;
-    image: string;
-    location: string;
-    species: string;
-    status: string;
-};
 
-export interface ILocationCard extends Location {};
+export interface ICharacterCard extends Omit<Character, "origin" | "gender" | "type"> {};
 
-export interface IEpisodeCard extends Episode {};
+export interface ILocationCard extends Omit<Location, "residents"> {};
+
+export interface IEpisodeCard extends Omit<Episode, "characters"> {};
 
 export interface IPageController {
     setCurrentPage: React.Dispatch<React.SetStateAction<number>>;

@@ -27,11 +27,11 @@ export interface IAllEpisodesResponse {
     }
 };
 
-export interface characterByIdResponse {
+export interface ICharacterByIdResponse {
     character: Character
 };
 
-export interface locationByIdResponse {
+export interface ILocationByIdResponse {
     location: Location
 }
 

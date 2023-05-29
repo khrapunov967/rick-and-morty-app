@@ -1,18 +1,18 @@
 import { useQuery } from "@apollo/client";
-import { ALL_CHARACTERS } from "../apollo/queries/characters";
-import { IAllCharacatersResponse } from "../types/hooks";
+import { IAllLocationsResponse } from "../types/hooks";
 import { useState } from "react";
+import { ALL_LOCATIONS } from "../apollo/queries/locations";
 import TitleContainer from "../components/TitleContainer";
 import PageController from "../components/PageController";
 import Loader from "../components/Loader";
 import CardContainer from "../components/CardContainer";
-import CharacterCard from "../components/CharacterCard";
+import LocationCard from "../components/LocationCard";
 
-const CharactersPage: React.FC = () => {
+const Locations: React.FC = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     
-    const { error, loading, data } = useQuery<IAllCharacatersResponse>(ALL_CHARACTERS, {
+    const { error, loading, data } = useQuery<IAllLocationsResponse>(ALL_LOCATIONS, {
         variables: {
             page: currentPage
         }
@@ -21,14 +21,14 @@ const CharactersPage: React.FC = () => {
     return (
         <section>
             <TitleContainer
-                title="Characters"
+                title="Locations"
             />
 
             <div className="w-full bg-[#272b33] min-h-screen">
                 <PageController
                     setCurrentPage={setCurrentPage}
                     currentPage={currentPage}
-                    maxPage={data?.characters.info.pages ?? 1}
+                    maxPage={data?.locations.info.pages ?? 1}
                     minPage={1}
                 />
                 
@@ -45,17 +45,15 @@ const CharactersPage: React.FC = () => {
                     :
                         <CardContainer>
                             {
-                                data?.characters.characters.map(character => {
+                                data?.locations.locations.map(location => {
                                     return (
-                                        <CharacterCard
-                                            id={character.id}
-                                            name={character.name}
-                                            status={character.status}
-                                            species={character.species}
-                                            location={character.location.name}
-                                            image={character.image}
+                                        <LocationCard
+                                            id={location.id}
+                                            name={location.name}
+                                            dimension={location.dimension}
+                                            type={location.type}
                                         />
-                                    );
+                                    )
                                 })
                             }
                         </CardContainer>
@@ -65,4 +63,4 @@ const CharactersPage: React.FC = () => {
     );
 };
 
-export default CharactersPage;
+export default Locations;
